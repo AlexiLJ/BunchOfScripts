@@ -13,8 +13,8 @@ def from_dat_to_csv(name):
     
 if __name__ == "__main__":
     try:
-        name = input('Enter .dat file name: ')
-        if not name:
+        In_name = input('Enter .dat file name: ')
+        if not In_name:
             raise ValueError
     except FileNotFoundError:
         print ("No such file in directory!")
@@ -25,9 +25,8 @@ if __name__ == "__main__":
     except ValueError:
         print("\nNo file name provided!") 
         exit()
-    from_dat_to_csv(name)
+
     
-    print(from_dat_to_csv(name)[1]+ ' is saved' )
-
-
-                
+    from_dat_to_csv(In_name)
+    
+    print(from_dat_to_csv((In_name)[1]+ ' is saved' ))
