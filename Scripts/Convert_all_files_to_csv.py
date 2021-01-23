@@ -3,11 +3,9 @@ import pandas as pd
 from From_dat_to_csv import from_dat_to_csv
 '''
 Converts all files in directory from .dat to .csv
-and removes ppms head
+and removes LCR head
 
 '''
-
-
 path = os.getcwd()
 
 with os.scandir(path) as scan:
@@ -26,6 +24,7 @@ with os.scandir(path) as scan:
                         dummy.write(line)
                 from_dat_to_csv('dummy.dat')
                 os.rename('dummy.csv', f'{fname[:-4]}.csv')
+    
     os.remove('dummy.dat')
                 
 
