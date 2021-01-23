@@ -12,14 +12,14 @@ with os.scandir(path) as scan:
     for file in scan:
         fname=file.name
         if file.name.endswith(".dat") and file.is_file():
-            with open(file, encoding="utf8") as ifile:
+            with open(file, encoding="utf-8") as ifile:
                 lines = ifile.readlines()
                 #print(lines[:5])
                 if '[Data]\n' in lines:
                     lines = lines[lines.index('[Data]\n')+1:]
                 else: pass
                
-                with open('dummy.dat', 'w') as dummy:
+                with open('dummy.dat', 'w', encoding="utf-8") as dummy:
                     for line in lines:
                         dummy.write(line)
                 from_dat_to_csv('dummy.dat')
