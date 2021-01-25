@@ -14,7 +14,6 @@ with os.scandir(path) as scan:
         if file.name.endswith(".dat") and file.is_file():
             with open(file, encoding="utf-8") as ifile:
                 lines = ifile.readlines()
-                #print(lines[:5])
                 if '[Data]\n' in lines:
                     lines = lines[lines.index('[Data]\n')+1:]
                 else: pass

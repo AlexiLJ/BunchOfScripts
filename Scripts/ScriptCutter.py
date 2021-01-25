@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 
+'''
+This sript take an .csv file produced by imageJ
+and filters out areas below pointed threshold
+'''
 try:
     name = input('Enter csv file name: ')
     if not name:
